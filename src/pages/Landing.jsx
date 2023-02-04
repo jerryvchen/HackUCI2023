@@ -2,7 +2,8 @@ import React from 'react';
 
 function Landing() {
     return (
-        <h1>this is the homepage</h1>
+        <h1>Project Startup</h1>
+        
     );
 }
 
