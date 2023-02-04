@@ -4,7 +4,6 @@ import Layout from "./pages/Layout";
 import Landing from "./pages/Landing";
 import Planner from "./pages/Planner";
 import NoPage from "./pages/NoPage";
-import ProgressBar from "./components/progress-bar"
 import './App.css';
 
 export default function App() {
