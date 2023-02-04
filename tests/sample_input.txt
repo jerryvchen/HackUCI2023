@@ -1,7 +1,9 @@
 1
 5
 read project writeup
+sleep
 review resources
 make a prototype
-make final version 
+make final version
+dance
 turn it in
