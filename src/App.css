@@ -38,7 +38,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-  align-items: center;
+  margin: auto;
 }
 
 .navbar {
