@@ -1,0 +1,7 @@
+1
+5
+read project writeup
+review resources
+make a prototype
+make final version 
+turn it in
