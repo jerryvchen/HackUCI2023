@@ -22,6 +22,7 @@ def create_planner(start_day: int, end_day: int, tasks: list[str]) -> dict[int, 
     return planner
 
 
+
 def create_planner_from_path(path: Path) -> dict[int, list[str]]:
     """Parses through a file and returns a planner dict."""
     tasks = list()
@@ -49,4 +50,5 @@ def print_planner(planner: dict[int, list[str]]):
     for day in planner.keys():
         event_str = ', '.join(planner[day])
         print('Day ' + str(day) + ': ' + event_str)
+
 
