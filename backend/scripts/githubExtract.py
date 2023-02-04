@@ -1,6 +1,8 @@
-import pip._vendor.requests 
+import requests
 
-def get_languages(query):
+
+#counts the instances of each language, prints the one with highest instances
+def get_most_used_language(query):
     response = requests.get(f"https://api.github.com/search/repositories?q={query}")
     data = response.json()
     repositories = data["items"]
@@ -11,7 +13,7 @@ def get_languages(query):
             languages[language] += 1
         else:
             languages[language] = 1
-    return languages
+    return max(languages, key=languages.get)
 
-languages = get_languages("chatbot")
-print(languages)
+most_used_language = get_most_used_language("chatbot")
+print(f"The most used language is: {most_used_language}")
