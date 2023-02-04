@@ -30,7 +30,7 @@ h1 {
   font-size: 5rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
-    90deg,
+    30deg,
     rgba(249, 211, 180, 1) 0%,
     rgba(249, 211, 180, 0) 100%
   );
@@ -38,6 +38,41 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: space-evenly;
+
+  padding: 0rem 0rem;
+  border-radius: 0rem;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+}
+
+.nav-spacer {
+  width: 50%;
+  height: 2rem;
+}
+
+.nav-text {
+  border: none;
+  font-size: 1.5rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  padding-right: 1rem;
+  text-decoration: none;
+
+  outline: none;
+  color: #a1a1a1;
+  background: #1f2123;
 }
 
 .search {
