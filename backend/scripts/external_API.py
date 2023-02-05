@@ -1,6 +1,7 @@
 import json
 import urllib.parse
 import urllib.request
+import requests
 
 GOOGLE_API_KEY = 'AIzaSyBAaXTy6FFFcGRfSS1CJiI8sXYyTOshAkE'
 
@@ -43,18 +44,27 @@ def get_result(url: str) -> dict:
     response = None
 
     try:
-        request = urllib.request.Request(url)
-        response = urllib.request.urlopen(request)
-        json_txt = response.read().decode(encoding='utf-8')
+        url = "https://api.github.com/search/repositories"
 
-        return json.loads(json_txt)
+        querystring = {"q":"chess", "per_page":"100"}
+
+        payload = ""
+        headers = {"Authorization": "Bearer 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"}
+        response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+        # json_txt = response.read().decode(encoding='utf-8')
+
+        # return json.loads(json_txt)
+        return json.loads(response.text)
     
     finally:
         if response != None:
             response.close()
 
 
-def get_3_most_used_language_github(query) -> list:
+def get_3_most_used_language_github(query) -> dict:
+    """This functions takes a query and returns the 3 most used 
+    programming languages used on github for the query
+    """
     data = get_result(build_search_github_url(query))
     repositories = data["items"]
     languages = {}
@@ -64,5 +74,15 @@ def get_3_most_used_language_github(query) -> list:
             languages[language] += 1
         else:
             languages[language] = 1
-    sorted(repositories, key=repositories.get, reverse=True)
-    return repositories[:3]
+    languages = sorted(languages.items(), key=lambda languages: languages[1], reverse=True)
+
+    top_3 = languages[:3]
+    top_3_dict = dict()
+    for i in range(0, 3): 
+        top_3_dict[top_3[i][0]] = top_3[i][1]
+
+    return top_3_dict
+
+        
+
+print(get_3_most_used_language_github("chess"))
