@@ -25,7 +25,7 @@ function Planner()
 
     return(
         <div className="App">
-            <h1>this is the planner</h1>
+            <h1>Optimal Language</h1>
              {testData.map((item, idx) => (
                 <ProgressBar
                    key={idx}
