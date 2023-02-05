@@ -49,7 +49,7 @@ def get_result(url: str) -> dict:
         querystring = {"q":"chess", "per_page":"100"}
 
         payload = ""
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer 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"}
         response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
         # json_txt = response.read().decode(encoding='utf-8')
 
@@ -65,6 +65,7 @@ def get_3_most_used_language_github(query) -> dict:
     """This functions takes a query and returns the 3 most used 
     programming languages used on github for the query
     """
+    print('Starting')
     data = get_result(build_search_github_url(query))
     repositories = data["items"]
     languages = {}
