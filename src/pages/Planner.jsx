@@ -17,11 +17,22 @@ function Planner()
       setFinalValue(event.target.value);
     };
   
-    function handleButtonClick() {
-      console.log("Value: ", inputValue); //change to store the value where we want it
-      setInputValue("");
+    async function handleButtonClick() {
+        try {
+            let res = await fetch(`http://127.0.0.1:5000/get-popular-languages?q=chess`, {method: "POST", credentials: 'include', body: inputValue}); //change to store the value where we want it
+            
+            let resJson = await res.json();
+            if (res.status === 200) {
+                setInputValue(resJson);
+            } else {
+                setInputValue("Some error occured");
+            }
+        } catch (err) {
+            console.log(err);
+          }
+            
+        };
       //const storedInfo = localStorage.getItem("inputValue");
-    };
 
     return(
         <div className="App">
