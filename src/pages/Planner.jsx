@@ -35,9 +35,9 @@ function Planner()
 
              ))}
              <div className="App">
-                 <p>Please enter a value:</p>
-                 <input type="text" id = "inputValue" value = {inputValue} onChange={handleInputChange} />
-                 <button onClick={handleButtonClick}> Store Value </button>
+                 <p className='question'>Please enter a value:</p>
+                 <input type="text" id = "inputValue" value = {inputValue} onChange={handleInputChange} className="title-q" />
+                 <button onClick={handleButtonClick} className="title-button"> Store Value </button>
 
                  <h3>Final Value: {finalValue}</h3>
              </div>
