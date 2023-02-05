@@ -1,7 +1,7 @@
 import requests
 
 
-#counts the instances of each language, prints the one with highest instances
+# counts the instances of each language, prints the one with highest instances
 def get_most_used_language(query):
     response = requests.get(f"https://api.github.com/search/repositories?q={query}")
     data = response.json()
