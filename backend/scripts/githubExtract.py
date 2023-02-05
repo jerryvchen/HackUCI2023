@@ -15,5 +15,6 @@ def get_most_used_language(query):
             languages[language] = 1
     return max(languages, key=languages.get)
 
-most_used_language = get_most_used_language("chatbot")
+most_used_language = get_most_used_language("chatbot") #test code
+
 print(f"The most used language is: {most_used_language}")
